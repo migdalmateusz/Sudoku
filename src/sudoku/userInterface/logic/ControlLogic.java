@@ -1,5 +1,6 @@
 package sudoku.userInterface.logic;
 
+import sudoku.computationLogic.GameLogic;
 import sudoku.constants.GameState;
 import sudoku.constants.Messages;
 import sudoku.problemDomain.IStorage;
@@ -56,6 +57,5 @@ public class ControlLogic implements IUserInterfaceContract.EventListener {
         } catch (IOException e) {
             view.showError(Messages.ERROR);
         }
-
     }
 }

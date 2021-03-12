@@ -80,7 +80,7 @@ public class GameGenerator {
                 if (newGrid[xCoordinate][yCoordinate] == 0) {
                     newGrid[xCoordinate][yCoordinate] = value;
 
-                    if (GameLogic.sudokuIsIvalid(newGrid)) {
+                    if (GameLogic.sudokuIsInvalid(newGrid)) {
                         newGrid[xCoordinate][yCoordinate] = 0;
                         interrupt++;
                     } else {
