@@ -44,10 +44,10 @@ public class UserInterfaceImpl implements IUserInterfaceContract.View,
         this.stage = stage;
         this.root = new Group();
         this.textFieldCoordinates = new HashMap<>();
-        initializeUserInteraface();
+        initializeUserInterface();
     }
 
-    private void initializeUserInteraface() {
+    private void initializeUserInterface() {
         drawBackground(root);
         drawTitle(root);
         drawSudokuBoard(root);
