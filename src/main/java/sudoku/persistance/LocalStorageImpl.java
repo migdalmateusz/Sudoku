@@ -1,40 +1,39 @@
 package sudoku.persistance;
 
-import sudoku.problemDomain.IStorage;
-import sudoku.problemDomain.SudokuGame;
+import sudoku.problemdomain.IStorage;
+import sudoku.problemdomain.SudokuGame;
 
 import java.io.*;
 
 public class LocalStorageImpl implements IStorage {
-    private  static File GAME_DATA = new File(
+    private static final File gameData = new File(
             System.getProperty("user.home"),
             "gamedata.txt"
     );
 
     @Override
-    public void updateGameData(SudokuGame game) throws IOException {
+    public void updateGameData(SudokuGame game) {
         try {
-            FileOutputStream fileOutputStream = new FileOutputStream(GAME_DATA);
+            FileOutputStream fileOutputStream = new FileOutputStream(gameData);
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
             objectOutputStream.writeObject(game);
             objectOutputStream.close();
         } catch (IOException e) {
-            throw new IOException("Unable to access Game Data");
-
+            throw new IllegalStateException("Unable to access Game Data", e);
         }
 
     }
 
     @Override
-    public SudokuGame getGameData() throws IOException {
-        FileInputStream fileInputStream = new FileInputStream(GAME_DATA);
-        ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+    public SudokuGame getGameData()  {
         try {
+            FileInputStream fileInputStream = new FileInputStream(gameData);
+            ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
             SudokuGame gameState = (SudokuGame) objectInputStream.readObject();
             objectInputStream.close();
             return gameState;
-        } catch (ClassNotFoundException e) {
-            throw new IOException("File Not Found");
+        } catch (IOException | ClassNotFoundException e ) {
+            throw new IllegalStateException ("File Not Found", e);
         }
     }
 }

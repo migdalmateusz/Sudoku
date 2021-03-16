@@ -2,25 +2,17 @@ package sudoku;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
-import sudoku.buildLogic.SudokuBuildLogic;
-import sudoku.userInterface.UserInterfaceImpl;
-
-import java.io.IOException;
+import sudoku.buildlogic.SudokuBuildLogic;
+import sudoku.userinterface.UserInterfaceImpl;
 
 public class SudokuApplication extends Application {
-    private UserInterfaceImpl uiImpl;
 
     @Override
-    public void start(Stage primaryStage) throws IOException {
+    public void start(Stage primaryStage) {
 
-        uiImpl = new UserInterfaceImpl(primaryStage);
+        UserInterfaceImpl uiImpl = new UserInterfaceImpl(primaryStage);
 
-        try {
-            SudokuBuildLogic.build(uiImpl);
-        } catch (IOException e) {
-            e.printStackTrace();
-            throw e;
-        }
+        SudokuBuildLogic.build(uiImpl);
 
     }
 
