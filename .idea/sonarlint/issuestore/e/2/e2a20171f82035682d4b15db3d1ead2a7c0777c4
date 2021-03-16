@@ -1,0 +1,8 @@
+
+Ç
+java:S1598"«This file "GameGenerator.java" should be located in "sudoku\computationlogic" directory, not in "C:\Users\Mateusz MigdaÅ‚\Desktop\Priv\Sudoku\src\sudoku\computationLogic".(˜ÀÂ¡úÿÿÿÿ
+m	java:S127G"XRefactor the code in order to not assign to this loop counter from within the loop body.(‹—™Œ
+m
+java:S3776/"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(°¦ÑØþÿÿÿÿ
+O
+java:S1118":Add a private constructor to hide the implicit public one.(øëÕ
