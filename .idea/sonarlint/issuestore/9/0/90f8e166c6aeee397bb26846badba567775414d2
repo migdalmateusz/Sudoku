@@ -1,7 +1,4 @@
 
-O
-java:S1118":Add a private constructor to hide the implicit public one.(øëÕ
-
-m	java:S127G"XRefactor the code in order to not assign to this loop counter from within the loop body.(‹—™Œ
 m
-java:S3776/"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(°¦ÑØþÿÿÿÿ
+java:S37763"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(°¦ÑØþÿÿÿÿ
+m	java:S127K"XRefactor the code in order to not assign to this loop counter from within the loop body.(‹—™Œ
